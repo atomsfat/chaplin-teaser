@@ -4,3 +4,6 @@ HomePageView = require 'views/home-page-view'
 module.exports = class HomeController extends Controller
   index: ->
     @view = new HomePageView()
+  categorias: ->
+    console.log "home-controller#categegorias"
+    @view = new HomePageView()
