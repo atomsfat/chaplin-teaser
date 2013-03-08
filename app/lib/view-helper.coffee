@@ -26,4 +26,22 @@ Handlebars.registerHelper 'url', (routeName, params...) ->
   url = null
   mediator.publish '!router:reverse', routeName, params, (result) ->
     url = result
-  "/#{url}"
+    "/#{url}"
+
+
+#! ******************************
+#  Handlebars helpers
+#  ******************************
+
+# debug helper
+# usage: {{debug}} or {{debug someValue}}
+# from: @commondream (http://thinkvitamin.com/code/handlebars-js-part-3-tips-and-tricks/)
+Handlebars.registerHelper "debug", (optionalValue) ->
+  console.log "Current Context"
+  console.log "===================="
+  console.log this
+  if optionalValue
+    console.log "Value"
+    console.log "===================="
+    console.log optionalValue
+

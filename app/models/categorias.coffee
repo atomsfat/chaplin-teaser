@@ -6,7 +6,11 @@ module.exports = class Categorias extends Model
     console.log "categorias#initialize"
     super
     @url = "http://localhost:3333/json/categories.json"
-    @fetch()
+
+    @initDeferred()
+    @fetch success: (model, response)->
+      console.log "model resolved"
+      model.resolve()
 
   parse: (response) ->
     console.log response

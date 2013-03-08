@@ -1,3 +1,16 @@
 <div id="categories">
   <h2>Categorias</h2>
+  {{debug categories}}
+{{#each categories}}
+<div style="height:310px;" class="row-fluid">
+  <div style="height:300px" class="span12">
+    <a href="#{{url}}">
+      <div class="">
+        <img height="300" src="{{media.0.url}}.{{media.0.extension}}">
+      </div>
+    </a>
+  </div>
+</div>
+{{/each}}
+
 </div>
