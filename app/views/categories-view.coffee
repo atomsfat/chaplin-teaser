@@ -11,3 +11,10 @@ module.exports = class CategoriesView extends View
       @model.done @render
     else if @model.state() is 'resolved'
       @render()
+
+    @delegate "hover", ".category", @hoverCategory
+
+  hoverCategory: (e)->
+    console.log "CategoriesView#hoverCategory"
+    @publishEvent "somethingHover",e
+

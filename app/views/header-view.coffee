@@ -7,3 +7,9 @@ module.exports = class HeaderView extends View
   container: '#header-container'
   id: 'header'
   template: template
+  initialize: ->
+    super
+    @subscribeEvent 'somethingHover', @processHover
+
+  processHover: (e)->
+    console.log "HeaderView#processHover"
